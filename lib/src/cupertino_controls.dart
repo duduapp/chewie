@@ -9,7 +9,7 @@ import 'package:chewie/src/utils.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:open_iconic_flutter/open_iconic_flutter.dart';
-import 'package:video_player/video_player.dart';
+import 'package:cached_video_player/cached_video_player.dart';
 
 class CupertinoControls extends StatefulWidget {
   const CupertinoControls({
@@ -27,7 +27,7 @@ class CupertinoControls extends StatefulWidget {
 }
 
 class _CupertinoControlsState extends State<CupertinoControls> {
-  VideoPlayerValue _latestValue;
+  CachedVideoPlayerValue _latestValue;
   double _latestVolume;
   bool _hideStuff = true;
   Timer _hideTimer;
@@ -35,7 +35,7 @@ class _CupertinoControlsState extends State<CupertinoControls> {
   Timer _expandCollapseTimer;
   Timer _initTimer;
 
-  VideoPlayerController controller;
+  CachedVideoPlayerController controller;
   ChewieController chewieController;
 
   @override
@@ -230,7 +230,7 @@ class _CupertinoControlsState extends State<CupertinoControls> {
   }
 
   GestureDetector _buildMuteButton(
-    VideoPlayerController controller,
+    CachedVideoPlayerController controller,
     Color backgroundColor,
     Color iconColor,
     double barHeight,
@@ -278,7 +278,7 @@ class _CupertinoControlsState extends State<CupertinoControls> {
   }
 
   GestureDetector _buildPlayPause(
-    VideoPlayerController controller,
+    CachedVideoPlayerController controller,
     Color iconColor,
     double barHeight,
   ) {

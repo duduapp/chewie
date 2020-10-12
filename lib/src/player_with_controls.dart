@@ -1,11 +1,11 @@
 import 'dart:ui';
 
+import 'package:cached_video_player/cached_video_player.dart';
 import 'package:chewie/src/chewie_player.dart';
 import 'package:chewie/src/cupertino_controls.dart';
 import 'package:chewie/src/material_controls.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:video_player/video_player.dart';
 
 class PlayerWithControls extends StatelessWidget {
   PlayerWithControls({Key key}) : super(key: key);
@@ -36,7 +36,7 @@ class PlayerWithControls extends StatelessWidget {
             child: AspectRatio(
               aspectRatio: chewieController.aspectRatio ??
                   _calculateAspectRatio(context),
-              child: VideoPlayer(chewieController.videoPlayerController),
+              child: CachedVideoPlayer(chewieController.videoPlayerController),
             ),
           ),
           chewieController.overlay ?? Container(),

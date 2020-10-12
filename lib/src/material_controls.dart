@@ -1,11 +1,11 @@
 import 'dart:async';
 
+import 'package:cached_video_player/cached_video_player.dart';
 import 'package:chewie/src/chewie_player.dart';
 import 'package:chewie/src/chewie_progress_colors.dart';
 import 'package:chewie/src/material_progress_bar.dart';
 import 'package:chewie/src/utils.dart';
 import 'package:flutter/material.dart';
-import 'package:video_player/video_player.dart';
 
 class MaterialControls extends StatefulWidget {
   const MaterialControls({Key key}) : super(key: key);
@@ -17,7 +17,7 @@ class MaterialControls extends StatefulWidget {
 }
 
 class _MaterialControlsState extends State<MaterialControls> {
-  VideoPlayerValue _latestValue;
+  CachedVideoPlayerValue _latestValue;
   double _latestVolume;
   bool _hideStuff = true;
   Timer _hideTimer;
@@ -29,7 +29,7 @@ class _MaterialControlsState extends State<MaterialControls> {
   final barHeight = 48.0;
   final marginSize = 5.0;
 
-  VideoPlayerController controller;
+  CachedVideoPlayerController controller;
   ChewieController chewieController;
 
   @override
@@ -207,7 +207,7 @@ class _MaterialControlsState extends State<MaterialControls> {
   }
 
   GestureDetector _buildMuteButton(
-    VideoPlayerController controller,
+    CachedVideoPlayerController controller,
   ) {
     return GestureDetector(
       onTap: () {
@@ -243,7 +243,7 @@ class _MaterialControlsState extends State<MaterialControls> {
     );
   }
 
-  GestureDetector _buildPlayPause(VideoPlayerController controller) {
+  GestureDetector _buildPlayPause(CachedVideoPlayerController controller) {
     return GestureDetector(
       onTap: _playPause,
       child: Container(

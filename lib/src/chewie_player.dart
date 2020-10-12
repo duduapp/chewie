@@ -5,7 +5,7 @@ import 'package:chewie/src/player_with_controls.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-import 'package:video_player/video_player.dart';
+import 'package:cached_video_player/cached_video_player.dart';
 import 'package:wakelock/wakelock.dart';
 
 typedef Widget ChewieRoutePageBuilder(
@@ -198,7 +198,7 @@ class ChewieController extends ChangeNotifier {
   }
 
   /// The controller for the video you want to play
-  final VideoPlayerController videoPlayerController;
+  final CachedVideoPlayerController videoPlayerController;
 
   /// Initialize the Video on Startup. This will prep the video for playback.
   final bool autoInitialize;
